@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#0b0f14;
@@ -40,7 +41,7 @@
     .btn.primary{background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#001018}
     .btn:active{transform:translateY(1px)}
     .avatar-card{justify-self:end;background:radial-gradient(1200px 300px at 50% -20%, rgba(76,201,240,0.25), transparent), var(--card);border:1px solid var(--border);padding:24px;border-radius:20px;box-shadow:var(--shadow);text-align:center}
-    .avatar{width:160px;height:160px;border-radius:50%;border:3px solid var(--border);background:linear-gradient(135deg,#1f2a44,#0f1624);display:inline-block}
+    .avatar{width:160px;height:160px;border-radius:50%;border:3px solid var(--border);background:linear-gradient(135deg,#1f2a44,#0f1624);display:inline-block;object-fit:cover}
     .socials{margin-top:16px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
     .grid{display:grid;gap:20px}
     .grid.cards{grid-template-columns:repeat(12,1fr)}
@@ -67,13 +68,11 @@
       .title{font-size:34px}
       .grid.cards{grid-template-columns:repeat(2,1fr)}
     }
-    /* Print-friendly for PDF */
     @media print{
       .btn, .hero-actions, .socials a::after{display:none !important}
       body{background:#fff;color:#000}
       .card, .item{box-shadow:none}
     }
-    /* Simple anchor offsets */
     nav.sticky{position:sticky;top:0;background:rgba(11,15,20,0.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:50}
     nav.sticky .nav-inner{max-width:1080px;margin:0 auto;display:flex;gap:14px;align-items:center;padding:10px 24px}
     nav a{padding:8px 10px;border-radius:10px}
@@ -100,46 +99,45 @@
       <div>
         <span class="badge">🚀 CSE Student • Robotics & IoT Enthusiast</span>
         <h1 class="title">MD Rakibul Hassan</h1>
-        <p class="subtitle">Computer Science & Engineering student at CSTU (2022–2027). Campus Ambassador, event organizer, and builder of practical robotics, IoT, and Android projects. Passionate about learning, teaching, and community building.</p>
+        <p class="subtitle">Computer Science & Engineering student at CSTU (2022–2027). Campus Ambassador, event organizer, and builder of robotics, IoT, and Android projects. Passionate about learning, teaching, and innovation.</p>
         <div class="hero-actions">
           <a class="btn primary" href="mailto:rakibulhassanratulkhan84@gmail.com">✉️ Email</a>
           <a class="btn" href="tel:+8801989377269">📞 Call</a>
-          <a class="btn" href="https://github.com/rakibul0026" target="_blank" rel="noopener">💻 GitHub</a>
+          <a class="btn" href="https://github.com/rakibul0026" target="_blank">💻 GitHub</a>
           <a class="btn" href="#" id="printBtn">🖨️ Save as PDF</a>
         </div>
         <div class="kpis">
-      
           <div class="kpi"><strong>3+ Years</strong><div class="muted">Robotics/IoT Practice</div></div>
           <div class="kpi"><strong>15+ Certificates</strong><div class="muted">Programming & Security</div></div>
         </div>
       </div>
       <div class="avatar-card">
-   <div class="avatar">
-  <img src="profile.jpg" alt="My Profile Picture" class="avatar">
-</div>
+        <img src="profile.jpg" alt="Profile Picture" class="avatar">
         <div class="socials">
-          <a class="btn" href="https://github.com/rakibul0026" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/rakibul0026" target="_blank">GitHub</a>
+          <a class="btn" href="#" target="_blank">LinkedIn</a>
           <a class="btn" href="#projects">Projects</a>
         </div>
-        <p class="subtitle" style="margin-top:12px">📍 Chandpur, Bangladesh</p>
+        <p class="subtitle">📍 Chandpur, Bangladesh</p>
       </div>
     </header>
 
+    <!-- ABOUT -->
     <section id="about">
       <h2>About</h2>
       <div class="two-col">
         <div class="card">
           <h3>Who I Am</h3>
-          <p>I'm a CSE student at Chandpur Science & Technology University (CSTU), deeply involved in robotics competitions and community events. I enjoy building embedded systems with Arduino/ESP32, crafting Android apps, and exploring AI for practical use-cases.</p>
+          <p>I'm a CSE student at Chandpur Science & Technology University (CSTU), deeply involved in robotics competitions and tech communities. I love working with embedded systems, automation, and AI for solving real-world problems.</p>
         </div>
         <div class="card">
           <h3>What I Do</h3>
-          <p>Campus ambassador for major tech Olympiads, organizer and technical volunteer at robotics events, and developer of hands-on projects—from PID line followers to Java-based apps and IoT dashboards.</p>
+          <p>Campus ambassador for tech Olympiads, robotics event organizer, and developer of real-world projects like PID robots, Java apps, and IoT systems.</p>
         </div>
       </div>
     </section>
 
+    <!-- EDUCATION -->
     <section id="education">
       <h2>Education</h2>
       <div class="timeline">
@@ -151,10 +149,11 @@
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills">
       <h2>Skills</h2>
       <div class="card">
-        <div style="margin-bottom:8px"><strong>Programming</strong></div>
+        <div><strong>Programming</strong></div>
         <span class="chip">C</span>
         <span class="chip">C++</span>
         <span class="chip">Java</span>
@@ -163,176 +162,159 @@
         <span class="chip">MATLAB</span>
       </div>
       <div class="card" style="margin-top:12px">
-        <div style="margin-bottom:8px"><strong>Robotics & IoT</strong></div>
+        <strong>Robotics & IoT</strong><br>
         <span class="chip">Arduino UNO / Mega</span>
         <span class="chip">ESP32</span>
-        <span class="chip">Raspberry Pi</span>
         <span class="chip">PID Control</span>
         <span class="chip">Sensors & Actuators</span>
-        <span class="chip">PCB Design</span>
         <span class="chip">Tinkercad / Proteus / EasyEDA</span>
       </div>
       <div class="card" style="margin-top:12px">
-        <div style="margin-bottom:8px"><strong>Apps & Tools</strong></div>
+        <strong>Apps & Tools</strong><br>
         <span class="chip">Android Studio</span>
         <span class="chip">Firebase</span>
         <span class="chip">Git & GitHub</span>
-        <span class="chip">Data Analysis</span>
-        <span class="chip">Cybersecurity Fundamentals</span>
+        <span class="chip">Cybersecurity</span>
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience">
       <h2>Experience & Leadership</h2>
       <div class="grid cards">
         <div class="card" style="grid-column:span 6">
-                   <h3>Teacher</h3>
-          
-          <div class="experience-item">
-  <p class="muted">Tuition for classes 6–12</p>
-  <ul>
-<p>
-    Experienced in teaching Mathematics, Physics, and Computer Science.  
-    Skilled in time management and communication. Focused on helping students 
-    understand concepts clearly and improve their exam scores.  
-    Personalized lessons and doubt-solving sessions are available.
-</p>
-  </ul>
-</div>
-
-
+          <h3>Teacher</h3>
+          <p>Provided private tutoring for students (Classes 6–12) in Mathematics, Physics, and Computer Science. Focused on personalized learning and exam success.</p>
         </div>
         <div class="card" style="grid-column:span 6">
           <h3>Campus Ambassador</h3>
           <p class="muted">5th International Robo Tech Olympiad 2025</p>
-          <p>Promoted participation, managed communications, and provided technical support.</p>
+          <p>Promoted participation and managed technical communications.</p>
         </div>
         <div class="card" style="grid-column:span 6">
           <h3>Campus Ambassador</h3>
           <p class="muted">ICT Olympiad Bangladesh</p>
-          <p>Engaged students across departments; organized info sessions and prep circles.</p>
+          <p>Organized information sessions and tech awareness campaigns.</p>
         </div>
         <div class="card" style="grid-column:span 6">
           <h3>Campus Ambassador</h3>
           <p class="muted">National Robotics Championship</p>
-          <p>Facilitated registrations, team coordination, and on-site tech assistance.</p>
+          <p>Facilitated team coordination and on-site technical support.</p>
         </div>
       </div>
     </section>
 
-   <section id="projects">
-  <h2>Projects</h2>
-  <div class="grid cards">
-    <article class="card" style="grid-column:span 6">
-      <h3>Line Following Robot (PID Based)</h3>
-      <p>8-sensor Arduino UNO LFR with hybrid digital + PID control for smooth and fast tracking.</p>
-      <p class="muted">Tech: Arduino, IR sensors, PID tuning</p>
-    </article>
-    <article class="card" style="grid-column:span 6">
-      <h3>BMI Calculator – Android</h3>
-      <p>Simple, responsive BMI calculator app developed in Android Studio (Java).</p>
-      <p><a href="https://lnkd.in/ddPuvNYs" target="_blank" rel="noopener">View App Post</a></p>
-    </article>
-    <article class="card" style="grid-column:span 6">
-      <h3>Banking Application (Java OOP)</h3>
-      <p>Menu-driven console banking app demonstrating OOP concepts (encapsulation, inheritance, polymorphism).</p>
-      <p><a href="https://github.com/rakibul0026/Project-in-Java" target="_blank" rel="noopener">GitHub Repository</a></p>
-    </article>
-    <article class="card" style="grid-column:span 6">
-      <h3>Asteroid Effect Simulation — NASA App Challenge</h3>
-      <p>A physics-based simulation that visualizes the impact effects of asteroids on Earth using data-driven models.</p>
-      <p class="muted">Tech: Python, Pygame, NASA APIs, Data Visualization</p>
-    </article>
-  </div>
-</section>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid cards">
+        <article class="card" style="grid-column:span 6">
+          <h3>Line Following Robot (PID Based)</h3>
+          <p>8-sensor Arduino UNO LFR with hybrid digital + PID control.</p>
+          <p class="muted">Tech: Arduino, IR sensors, PID tuning</p>
+        </article>
+        <article class="card" style="grid-column:span 6">
+          <h3>BMI Calculator – Android</h3>
+          <p>Responsive BMI calculator app built in Android Studio (Java).</p>
+          <p><a href="https://lnkd.in/ddPuvNYs" target="_blank">View App Post</a></p>
+        </article>
+        <article class="card" style="grid-column:span 6">
+          <h3>Banking Application (Java OOP)</h3>
+          <p>Console-based banking app demonstrating OOP concepts.</p>
+          <p><a href="https://github.com/rakibul0026/Project-in-Java" target="_blank">GitHub Repository</a></p>
+        </article>
+        <article class="card" style="grid-column:span 6">
+          <h3>Asteroid Effect Simulation — NASA App Challenge</h3>
+          <p>Simulates asteroid impacts using real NASA data and visualization.</p>
+          <p class="muted">Tech: Python, Pygame, NASA APIs, Data Visualization</p>
+        </article>
+      </div>
+    </section>
 
-  
- <section id="certs">
-  <h2>Certifications</h2>
-  <div class="grid cards">
+    <!-- CERTIFICATIONS -->
+    <section id="certs">
+      <h2>Certifications</h2>
+      <div class="grid cards">
 
-    <div class="card" style="grid-column:span 4">
-      <h3>NASA International Space Apps Challenge</h3>
-      <p>Participated in the world’s largest global hackathon organized by NASA. Worked in a team to develop an innovative space technology solution.</p>
-      <p class="muted">Skills: Web Development · Web Services API · Team Leadership · Video Editing · Web Applications · Presentation Skills</p>
-    </div>
+        <div class="card" style="grid-column:span 4">
+          <h3>NASA International Space Apps Challenge</h3>
+          <p>Participated in the world’s largest hackathon by NASA, developing a space technology solution with a multidisciplinary team.</p>
+          <p class="muted">Skills: Web Development · APIs · Team Leadership · Presentation</p>
+        </div>
 
-    <div class="card" style="grid-column:span 4">
-      <h3>Robotic Engineering</h3>
-      <p>Completed a practical robotics course focused on Arduino-based automation, motor control, and sensor integration for real-world robotic systems.</p>
-      <p class="muted">Skills: Arduino IDE · Robotics · Embedded Systems</p>
-    </div>
+        <div class="card" style="grid-column:span 4">
+          <h3>Robotic Engineering</h3>
+          <p>Arduino-based robotics course covering motor control, sensors, and embedded systems.</p>
+          <p class="muted">Skills: Arduino IDE · Robotics · Embedded Systems</p>
+        </div>
 
-    <div class="card" style="grid-column:span 4">
-      <h3>Industrial Internet of Things (IIoT)</h3>
-      <p>Learned how IoT is applied in industrial automation, data collection, and smart manufacturing. Covered IoT architecture, sensors, and network systems.</p>
-      <p class="muted">Skills: IIoT · IoT Systems · Industrial Automation</p>
-    </div>
+        <div class="card" style="grid-column:span 4">
+          <h3>Industrial Internet of Things (IIoT)</h3>
+          <p>Learned IoT architecture, automation, and smart manufacturing systems.</p>
+          <p class="muted">Skills: IIoT · Industrial Automation</p>
+        </div>
 
-    <div class="card" style="grid-column:span 4">
-      <h3>Career Essentials in Cybersecurity</h3>
-      <p>Offered by Microsoft and LinkedIn Learning, this course introduced cybersecurity fundamentals, threat management, and defensive strategies.</p>
-      <p class="muted">Skills: Threat & Vulnerability Management · Security Awareness</p>
-    </div>
+        <div class="card" style="grid-column:span 4">
+          <h3>Career Essentials in Cybersecurity</h3>
+          <p>Microsoft & LinkedIn course on cybersecurity fundamentals and threat management.</p>
+          <p class="muted">Skills: Threat & Vulnerability Management</p>
+        </div>
 
-    <div class="card" style="grid-column:span 4">
-      <h3>Ethical Hacking for Beginners</h3>
-      <p>Introductory course on ethical hacking and penetration testing, including security basics, reconnaissance, and vulnerability analysis.</p>
-      <p class="muted">Skills: Ethical Hacking Fundamentals · Network Security</p>
-    </div>
+        <div class="card" style="grid-column:span 4">
+          <h3>Ethical Hacking for Beginners</h3>
+          <p>Intro course covering reconnaissance, scanning, and ethical security testing.</p>
+          <p class="muted">Skills: Ethical Hacking Fundamentals · Network Security</p>
+        </div>
 
-    <div class="card" style="grid-column:span 4">
-      <h3>Introduction to IoT</h3>
-      <p>Learned about IoT architecture, communication models, and use cases in smart homes and cities. Covered the essential roadmap to IoT development.</p>
-      <p class="muted">Skills: IoT Basics · Networking · Cloud Integration</p>
-    </div>
+        <div class="card" style="grid-column:span 4">
+          <h3>Introduction to IoT</h3>
+          <p>Covered IoT communication models, cloud connectivity, and smart home applications.</p>
+          <p class="muted">Skills: IoT Basics · Cloud Integration</p>
+        </div>
 
-    <div class="card" style="grid-column:span 4">
-      <h3>Introduction to Python Programming</h3>
-      <p>Completed a foundational Python course focusing on syntax, data types, loops, functions, and problem-solving for competitive programming.</p>
-      <p class="muted">Skills: Python Basics · Logic Building · Problem Solving</p>
-    </div>
+        <div class="card" style="grid-column:span 4">
+          <h3>Introduction to Python Programming</h3>
+          <p>Learned core Python programming including loops, functions, and data handling.</p>
+          <p class="muted">Skills: Python Basics · Problem Solving</p>
+        </div>
 
-  </div>
-</section>
+      </div>
+    </section>
 
+    <!-- CONTACT -->
     <section id="contact">
       <h2>Contact</h2>
       <div class="two-col">
         <div class="card">
-          <p>📧 <a href="mailto:youremail@example.com">rakibulhassanratulkhan84@gmail.com</a></p>
-          <p>📱 <a href="tel:+8801XXXXXXXXX">+8801989377269</a></p>
-          <p>🔗 <a href="https://github.com/rakibul0026" target="_blank" rel="noopener">github.com/rakibul0026</a></p>
-          <p>🔗 <a href="#" target="_blank" rel="noopener">LinkedIn (add your link)</a></p>
+          <p>📧 <a href="mailto:rakibulhassanratulkhan84@gmail.com">rakibulhassanratulkhan84@gmail.com</a></p>
+          <p>📱 <a href="tel:+8801989377269">+8801989377269</a></p>
+          <p>🔗 <a href="https://github.com/rakibul0026" target="_blank">github.com/rakibul0026</a></p>
+          <p>🔗 <a href="#" target="_blank">LinkedIn (add your link)</a></p>
         </div>
         <form class="card" onsubmit="event.preventDefault(); alert('Thanks! Your message was not actually sent in this static demo.');">
           <h3>Send a Message</h3>
-          <label> Your Name<br><input required type="text" placeholder="Name" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--text)"></label>
-          <br><br>
-          <label> Your Email<br><input required type="email" placeholder="email@example.com" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--text)"></label>
-          <br><br>
-          <label> Message<br><textarea required rows="4" placeholder="Write your message..." style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--text)"></textarea></label>
-          <br>
+          <label>Your Name<br><input required type="text" placeholder="Name" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--text)"></label><br><br>
+          <label>Your Email<br><input required type="email" placeholder="email@example.com" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--text)"></label><br><br>
+          <label>Message<br><textarea required rows="4" placeholder="Write your message..." style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--text)"></textarea></label><br>
           <button class="btn primary" type="submit">Send</button>
         </form>
       </div>
     </section>
 
+    <!-- ACHIEVEMENTS -->
     <section id="extras">
       <h2>Achievements & Activities</h2>
       <ul class="item">
-        <li>Organized campus workshops on Arduino, IoT, and basic robotics.</li>
-        <li>Mentored juniors on PID tuning for line follower robots.</li>
-        <li>Volunteered as technical support in multiple robotics competitions.</li>
+        <li>Organized campus workshops on Arduino, IoT, and Robotics.</li>
+        <li>Mentored juniors on PID tuning and embedded systems.</li>
+        <li>Volunteered as technical support in robotics competitions.</li>
       </ul>
     </section>
   </div>
 
   <footer>
     <div>© <span id="year"></span> MD Rakibul Hassan</div>
-    <div>
-      <a href="#top">Back to top ↑</a>
-    </div>
+    <div><a href="#top">Back to top ↑</a></div>
   </footer>
 
   <script>
